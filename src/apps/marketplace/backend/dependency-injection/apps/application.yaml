@@ -1,0 +1,13 @@
+services:
+
+  Apps.marketplace.controllers.CoursePutController:
+    class: ../../controllers/CoursePutController
+    arguments: ["@Shared.CommandBus"]
+
+  Apps.marketplace.controllers.StatusGetController:
+    class: ../../controllers/StatusGetController
+    arguments: []
+
+  Apps.marketplace.controllers.CoursesCounterGetController:
+    class: ../../controllers/CoursesCounterGetController
+    arguments: ["@Shared.QueryBus"]

@@ -2,12 +2,12 @@ import faker from 'faker';
 
 describe('Create courses', () => {
   beforeEach(() => {
-    cy.task('reset:mooc:db');
+    cy.task('reset:marketplace:db');
     cy.task('reset:backoffice:db');
   });
 
   after(() => {
-    cy.task('reset:mooc:db');
+    cy.task('reset:marketplace:db');
     cy.task('reset:backoffice:db');
   });
 

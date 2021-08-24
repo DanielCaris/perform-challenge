@@ -1,18 +1,18 @@
 import { BackofficeBackendApp } from '../../../src/apps/backoffice/backend/BackofficeBackendApp';
 import { BackofficeFrontendApp } from '../../../src/apps/backoffice/frontend/BackofficeFrontendApp';
-import { MoocBackendApp } from '../../../src/apps/mooc/backend/MoocBackendApp';
+import { MarketplaceBackendApp } from '../../../src/apps/marketplace/backend/MarketplaceBackendApp';
 
 export class Applications {
   private static backofficeBackend: BackofficeBackendApp;
   private static backofficeFrontend: BackofficeFrontendApp;
-  private static mooc: MoocBackendApp;
+  private static marketplace: MarketplaceBackendApp;
 
   static async start() {
     this.backofficeBackend = new BackofficeBackendApp();
     this.backofficeFrontend = new BackofficeFrontendApp();
-    this.mooc = new MoocBackendApp();
+    this.marketplace = new MarketplaceBackendApp();
 
-    await this.mooc.start();
+    await this.marketplace.start();
     await this.backofficeBackend.start();
     await this.backofficeFrontend.start();
 
@@ -20,7 +20,7 @@ export class Applications {
   }
 
   static async stop() {
-    await this.mooc.stop();
+    await this.marketplace.stop();
     await this.backofficeBackend.stop();
     await this.backofficeFrontend.stop();
   }

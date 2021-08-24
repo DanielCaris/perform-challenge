@@ -39,7 +39,7 @@ const convictConfig = convict({
       doc: 'Queue where subscribers listen on',
       format: String,
       env: 'RABBITMQ_QUEUE',
-      default: 'Mooc-DomainEvents'
+      default: 'Marketplace-DomainEvents'
     },
     exchange: {
       doc: 'Exchange where events are published',

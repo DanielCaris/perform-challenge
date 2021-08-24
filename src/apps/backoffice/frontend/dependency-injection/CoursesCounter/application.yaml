@@ -1,14 +1,14 @@
 services:
-  Mooc.coursesCounter.CoursesCounterFinder:
-    class: ../../../../../Contexts/Mooc/CoursesCounter/application/Find/CoursesCounterFinder
-    arguments: ['@Mooc.coursesCounter.CoursesCounterRepository']
+  Marketplace.coursesCounter.CoursesCounterFinder:
+    class: ../../../../../Contexts/Marketplace/CoursesCounter/application/Find/CoursesCounterFinder
+    arguments: ['@Marketplace.coursesCounter.CoursesCounterRepository']
 
-  Mooc.coursesCounter.CoursesCounterRepository:
-    class: ../../../../../Contexts/Mooc/CoursesCounter/infrastructure/persistence/mongo/MongoCoursesCounterRepository
+  Marketplace.coursesCounter.CoursesCounterRepository:
+    class: ../../../../../Contexts/Marketplace/CoursesCounter/infrastructure/persistence/mongo/MongoCoursesCounterRepository
     arguments: ['@Shared.ConnectionManager']
 
-  Mooc.coursesCounter.FindCoursesCounterQueryHandler:
-    class: ../../../../../Contexts/Mooc/CoursesCounter/application/Find/FindCoursesCounterQueryHandler
-    arguments: ['@Mooc.coursesCounter.CoursesCounterFinder']
+  Marketplace.coursesCounter.FindCoursesCounterQueryHandler:
+    class: ../../../../../Contexts/Marketplace/CoursesCounter/application/Find/FindCoursesCounterQueryHandler
+    arguments: ['@Marketplace.coursesCounter.CoursesCounterFinder']
     tags:
       - { name: 'queryHandler' }

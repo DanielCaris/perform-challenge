@@ -1,7 +1,7 @@
 describe('List courses', () => {
   beforeEach(() => {
     cy.task('reset:backoffice:db');
-    cy.task('reset:mooc:db');
+    cy.task('reset:marketplace:db');
   });
 
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe('List courses', () => {
   });
 
   after(() => {
-    cy.task('reset:mooc:db');
+    cy.task('reset:marketplace:db');
     cy.task('reset:backoffice:db');
   });
 

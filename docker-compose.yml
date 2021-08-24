@@ -17,9 +17,9 @@ services:
   app:
     <<: *default-app
 
-  mooc-backend:
+  marketplace-backend:
     <<: *default-app
-    command: bash -c "npm run build && npm run start:mooc:backend"
+    command: bash -c "npm run build && npm run start:marketplace:backend"
     ports:
       - 3000:3000
 
@@ -43,10 +43,9 @@ services:
       - 27017:27017
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
-    container_name: codely-elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
     environment:
-      - node.name=codely-elasticsearch
+      - node.name=elasticsearch
       - discovery.type=single-node #Elasticsearch forms a single-node cluster
       - bootstrap.memory_lock=true # might cause the JVM or shell session to exit if it tries to allocate more memory than is available!
       - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
@@ -60,11 +59,11 @@ services:
       - '9200:9200'
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.8.1
-    container_name: codely-kibana
+    image: docker.elastic.co/kibana/kibana:7.14.0
+    depends_on:
+      - elasticsearch
     environment:
-      ELASTICSEARCH_URL: http://codely-elasticsearch:9200
-      ELASTICSEARCH_HOSTS: http://codely-elasticsearch:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
     ports:
       - 5601:5601
 

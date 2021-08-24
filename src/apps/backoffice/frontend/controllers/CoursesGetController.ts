@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { Uuid } from '../../../../Contexts/Shared/domain/value-object/Uuid';
 import { QueryBus } from '../../../../Contexts/Shared/domain/QueryBus';
-import { FindCoursesCounterResponse } from '../../../../Contexts/Mooc/CoursesCounter/application/Find/FindCoursesCounterResponse';
-import { FindCoursesCounterQuery } from '../../../../Contexts/Mooc/CoursesCounter/application/Find/FindCoursesCounterQuery';
+import { FindCoursesCounterResponse } from '../../../../Contexts/Marketplace/CoursesCounter/application/Find/FindCoursesCounterResponse';
+import { FindCoursesCounterQuery } from '../../../../Contexts/Marketplace/CoursesCounter/application/Find/FindCoursesCounterQuery';
 import { WebController } from './WebController';
 
 export class CoursesGetController extends WebController {

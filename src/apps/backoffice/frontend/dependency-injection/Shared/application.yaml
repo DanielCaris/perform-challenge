@@ -5,14 +5,14 @@ services:
 
   Shared.MongoConfig:
     factory:
-      class: ../../../../../Contexts/Mooc/Shared/infrastructure/persistence/mongo/MongoConfigFactory
+      class: ../../../../../Contexts/Marketplace/Shared/infrastructure/persistence/mongo/MongoConfigFactory
       method: 'createConfig'
 
   Shared.ConnectionManager:
     factory:
       class: ../../../../../Contexts/Shared/infrastructure/persistence/mongo/MongoClientFactory
       method: 'createClient'
-    arguments: ['mooc', '@Shared.MongoConfig']
+    arguments: ['marketplace', '@Shared.MongoConfig']
 
   Shared.EventBus:
     class: ../../../../../Contexts/Shared/infrastructure/EventBus/RabbitMq/RabbitMqEventBus

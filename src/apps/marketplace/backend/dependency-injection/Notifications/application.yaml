@@ -1,0 +1,14 @@
+services:
+  Marketplace.notifications.EmailSender:
+    class: ../../../../../Contexts/Marketplace/Notifications/infrastructure/FakeEmailSender
+    arguments: []
+
+  Marketplace.notifications.SendWelcomeUserEmail:
+    class: ../../../../../Contexts/Marketplace/Notifications/application/SendWelcomeUserEmail/SendWelcomeUserEmail
+    arguments: ["@Marketplace.notifications.EmailSender"]
+
+  Marketplace.notifications.SendWelcomeUserEmailOnUserRegistered:
+    class: ../../../../../Contexts/Marketplace/Notifications/application/SendWelcomeUserEmail/SendWelcomeUserEmailOnUserRegistered
+    arguments: ["@Marketplace.notifications.SendWelcomeUserEmail"]
+    tags:
+      - { name: 'domainEventSubscriber' }

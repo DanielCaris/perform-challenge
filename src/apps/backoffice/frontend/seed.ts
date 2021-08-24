@@ -1,10 +1,10 @@
-import { CoursesCounterRepository } from '../../../Contexts/Mooc/CoursesCounter/domain/CoursesCounterRepository';
-import { CoursesCounter } from '../../../Contexts/Mooc/CoursesCounter/domain/CoursesCounter';
-import { CoursesCounterId } from '../../../Contexts/Mooc/CoursesCounter/domain/CoursesCounterId';
+import { CoursesCounterRepository } from '../../../Contexts/Marketplace/CoursesCounter/domain/CoursesCounterRepository';
+import { CoursesCounter } from '../../../Contexts/Marketplace/CoursesCounter/domain/CoursesCounter';
+import { CoursesCounterId } from '../../../Contexts/Marketplace/CoursesCounter/domain/CoursesCounterId';
 import container from './dependency-injection';
 
 export async function seed() {
-  const repository: CoursesCounterRepository = container.get('Mooc.coursesCounter.CoursesCounterRepository');
+  const repository: CoursesCounterRepository = container.get('Marketplace.coursesCounter.CoursesCounterRepository');
   const logger = container.get('Shared.Logger');
 
   const alreadyExists = await repository.search();
