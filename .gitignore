@@ -5,3 +5,9 @@ logs/
 src/Contexts/Marketplace/Courses/infrastructure/persistence/courses.*
 data
 test-results.xml
+
+# OS files
+.DS_Store
+
+# IDE config files
+.idea
