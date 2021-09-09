@@ -1,4 +1,5 @@
 import { Definition } from 'node-dependency-injection';
+
 import { DomainEvent } from '../../../Contexts/Shared/domain/DomainEvent';
 import { DomainEventSubscriber } from '../../../Contexts/Shared/domain/DomainEventSubscriber';
 import { EventBus } from '../../../Contexts/Shared/domain/EventBus';
@@ -26,7 +27,7 @@ export class MarketplaceBackendApp {
 
   private async registerSubscribers() {
     const eventBus = container.get('Shared.EventBus') as EventBus;
-    const subscriberDefinitions = container.findTaggedServiceIds('domainEventSubscriber') as Map<String, Definition>;
+    const subscriberDefinitions = container.findTaggedServiceIds('domainEventSubscriber') as Map<string, Definition>;
     const subscribers: Array<DomainEventSubscriber<DomainEvent>> = [];
 
     subscriberDefinitions.forEach((value: any, key: any) => subscribers.push(container.get(key)));

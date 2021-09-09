@@ -6,6 +6,7 @@ import Router from 'express-promise-router';
 import helmet from 'helmet';
 import * as http from 'http';
 import httpStatus from 'http-status';
+
 import Logger from '../../../Contexts/Shared/domain/Logger';
 import container from './dependency-injection';
 import { registerRoutes } from './routes';
@@ -33,7 +34,7 @@ export class Server {
 
     registerRoutes(router);
 
-    router.use((err: Error, req: Request, res: Response, next: Function) => {
+    router.use((err: Error, req: Request, res: Response, next: () => void) => {
       this.logger.error(err);
       res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message);
     });

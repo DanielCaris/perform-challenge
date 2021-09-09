@@ -1,9 +1,10 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
+
+import { CreateCourseCommand } from '../../../../contexts/Marketplace/Catalogs/application/CreateCourseCommand';
+import { CourseAlreadyExists } from '../../../../contexts/Marketplace/Catalogs/domain/CourseAlreadyExists';
+import { CommandBus } from '../../../../contexts/Shared/domain/CommandBus';
 import { Controller } from './Controller';
-import { CourseAlreadyExists } from '../../../../Contexts/Marketplace/Courses/domain/CourseAlreadyExists';
-import { CommandBus } from '../../../../Contexts/Shared/domain/CommandBus';
-import { CreateCourseCommand } from '../../../../Contexts/Marketplace/Courses/application/CreateCourseCommand';
 
 export class CoursePutController implements Controller {
   constructor(private commandBus: CommandBus) {}
