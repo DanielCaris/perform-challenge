@@ -4,7 +4,7 @@ import { EventBus } from '../../../domain/EventBus';
 import { DomainEventMapping } from '../DomainEventMapping';
 
 type Subscription = {
-  boundedCallback: () => void;
+  boundedCallback: (event: DomainEvent) => void;
   originalCallback: () => void;
 };
 

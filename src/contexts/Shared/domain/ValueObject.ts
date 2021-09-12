@@ -1,4 +1,4 @@
-export abstract class ValueObject<T extends any> {
+export abstract class ValueObject<T extends Object> {
   private _value: T;
 
   constructor(value: T) {

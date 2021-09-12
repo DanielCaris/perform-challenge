@@ -98,23 +98,23 @@ Our repositories try to be as simple as possible usually only containing 2 metho
 If we need some query with more filters we use the `Specification` pattern also known as `Criteria` pattern. So we add a
 `searchByCriteria` method.
 
-You can see an example [here](src/Contexts/Marketplace/Courses/domain/CourseRepository.ts)
-and its implementation [here](src/Contexts/Marketplace/Courses/infrastructure/persistence/MongoCourseRepository.ts).
+You can see an example [here](src/contexts/Marketplace/Catalogs/domain/CatalogRepository.ts)
+and its implementation [here](src/contexts/Marketplace/Catalogs/infrastructure/persistence/MongoCatalogRepository.ts).
 
 ### Aggregates
-You can see an example of an aggregate [here](src/Contexts/Marketplace/Courses/domain/Course.ts). All aggregates should
-extend the [AggregateRoot](src/Contexts/Shared/domain/AggregateRoot.ts).
+You can see an example of an aggregate [here](src/contexts/Marketplace/Catalogs/domain/Catalog.ts). All aggregates should
+extend the [AggregateRoot](src/contexts/Shared/domain/AggregateRoot.ts).
 
 ### Command Bus
-There is 1 implementations of the [command bus](src/Contexts/Shared/domain/CommandBus.ts).
-1. [Sync](src/Contexts/Shared/infrastructure/CommandBus/InMemoryCommandBus.ts) using the Symfony Message Bus
+There is 1 implementations of the [command bus](src/contexts/Shared/domain/CommandBus.ts).
+1. [Sync](src/contexts/Shared/infrastructure/CommandBus/InMemoryCommandBus.ts) using the Symfony Message Bus
 
 ### Query Bus
-The [Query Bus](src/Contexts/Shared/infrastructure/QueryBus/InMemoryQueryBus.ts) uses the Symfony Message Bus.
+The [Query Bus](src/contexts/Shared/infrastructure/QueryBus/InMemoryQueryBus.ts) uses the Symfony Message Bus.
 
 ### Event Bus
-The [Event Bus](src/Contexts/Shared/infrastructure/EventBus/InMemory/InMemoryAsyncEventBus.ts) uses the Symfony Message Bus.
-The [RabbitMQ Bus](src/Contexts/Shared/infrastructure/EventBus/RabbitMq/RabbitMqEventBus.ts) uses RabbitMQ C extension.
+The [Event Bus](src/contexts/Shared/infrastructure/EventBus/InMemory/InMemoryAsyncEventBus.ts) uses the Symfony Message Bus.
+The [RabbitMQ Bus](src/contexts/Shared/infrastructure/EventBus/RabbitMq/RabbitMqEventBus.ts) uses RabbitMQ C extension.
 
 ## 📱 Monitoring
 Every time a domain event is published it's exported to Prometheus. You can access to the Prometheus panel [here](http://localhost:9999/).

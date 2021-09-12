@@ -1,5 +1,6 @@
 import { Given } from 'cucumber';
 import { Definition } from 'node-dependency-injection';
+
 import container from '../../../../../../src/apps/marketplace/backend/dependency-injection';
 import { DomainEvent } from '../../../../../../src/Contexts/Shared/domain/DomainEvent';
 import { DomainEventSubscriber } from '../../../../../../src/Contexts/Shared/domain/DomainEventSubscriber';
@@ -17,7 +18,7 @@ Given('I send an event to the event bus:', async (event: any) => {
 });
 
 function buildDeserializer() {
-  const subscriberDefinitions = container.findTaggedServiceIds('domainEventSubscriber') as Map<String, Definition>;
+  const subscriberDefinitions = container.findTaggedServiceIds('domainEventSubscriber') as Map<string, Definition>;
   const subscribers: Array<DomainEventSubscriber<DomainEvent>> = [];
 
   subscriberDefinitions.forEach((value: any, key: any) => subscribers.push(container.get(key)));

@@ -2,7 +2,7 @@ node_modules/
 dist/
 .tmp
 logs/
-src/Contexts/Marketplace/Courses/infrastructure/persistence/courses.*
+src/Contexts/Marketplace/Catalogs/infrastructure/persistence/catalogs.*
 data
 test-results.xml
 

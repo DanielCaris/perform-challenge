@@ -1,0 +1,15 @@
+services:
+
+  Marketplace.catalogs.CatalogRepository:
+    class: ../../../../../Contexts/Marketplace/Catalogs/infrastructure/persistence/MongoCatalogRepository
+    arguments: ['@Shared.ConnectionManager']
+
+  Marketplace.catalogs.CatalogCreator:
+    class: ../../../../../Contexts/Marketplace/Catalogs/application/CatalogCreator
+    arguments: ['@Marketplace.catalogs.CatalogRepository', '@Shared.EventBus']
+
+  Marketplace.catalogs.CreateCatalogCommandHandler:
+    class: ../../../../../Contexts/Marketplace/Catalogs/application/CreateCatalogCommandHandler
+    arguments: ['@Marketplace.catalogs.CatalogCreator']
+    tags:
+      - { name: 'commandHandler' }

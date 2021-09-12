@@ -52,7 +52,7 @@ export class Server {
     });
   }
 
-  getHTTPServer() {
+  getHTTPServer(): http.Server | undefined {
     return this.httpServer;
   }
 
