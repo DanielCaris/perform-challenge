@@ -11,13 +11,12 @@
     "npm": ">=6.7.0"
   },
   "scripts": {
-    "dev:marketplace:backend": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  src/apps/backend/start.ts",
+    "dev": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  src/apps/backend/start.ts",
     "test": "npm run test:unit && npm run test:features",
     "test:unit": "NODE_ENV=test jest",
-    "test:features": "npm run test:marketplace:backend:features && npm run test:backoffice:backend:features",
-    "test:marketplace:backend:features": "NODE_ENV=test cucumber-js -p marketplace_backend",
+    "test:features": "NODE_ENV=test cucumber-js -p marketplace_backend",
     "lint": "eslint src/**/*.ts",
-    "start:marketplace:backend": "NODE_ENV=production node dist/src/apps/marketplace/backend/start",
+    "start": "NODE_ENV=production node dist/src/apps/marketplace/backend/start",
     "build": "npm run build:clean && npm run build:tsc && npm run build:di",
     "build:tsc": "tsc -p tsconfig.prod.json",
     "build:di": "copy 'src/**/*.{json,yaml,html,png}' dist/src",

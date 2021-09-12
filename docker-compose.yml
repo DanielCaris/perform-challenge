@@ -19,7 +19,7 @@ services:
 
   marketplace-backend:
     <<: *default-app
-    command: bash -c "npm run build && npm run start:marketplace:backend"
+    command: bash -c "npm run build && npm run start"
     ports:
       - 3000:3000
 
