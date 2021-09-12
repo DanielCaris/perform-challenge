@@ -1,5 +1,5 @@
-import { AggregateRoot } from '../../../Shared/domain/AggregateRoot';
-import { CatalogId } from '../../Shared/domain/Catalogs/CatalogId';
+import { AggregateRoot } from '../../../shared/domain/AggregateRoot';
+import { CatalogId } from '../../shared/domain/catalogs/CatalogId';
 import { CatalogCreatedDomainEvent } from './CatalogCreatedDomainEvent';
 import { CatalogName } from './CatalogName';
 

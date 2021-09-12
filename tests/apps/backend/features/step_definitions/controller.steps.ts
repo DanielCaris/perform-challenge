@@ -4,7 +4,7 @@ import request from 'supertest';
 
 import container from '../../../../../src/apps/backend/dependency-injection';
 import { MarketplaceBackendApp } from '../../../../../src/apps/backend/MarketplaceBackendApp';
-import { EnvironmentArranger } from '../../../../contexts/Shared/infrastructure/Arranger/EnvironmentArranger';
+import { EnvironmentArranger } from '../../../../contexts/shared/infrastructure/arranger/EnvironmentArranger';
 
 let _request: request.Test;
 let _response: request.Response;

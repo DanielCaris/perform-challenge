@@ -1,5 +1,5 @@
-import { Nullable } from '../../../Shared/domain/Nullable';
-import { CatalogId } from '../../Shared/domain/Catalogs/CatalogId';
+import { Nullable } from '../../../shared/domain/Nullable';
+import { CatalogId } from '../../shared/domain/catalogs/CatalogId';
 import { Catalog } from './Catalog';
 
 export interface CatalogRepository {

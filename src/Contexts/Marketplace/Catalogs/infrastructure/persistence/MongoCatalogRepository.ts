@@ -1,6 +1,6 @@
-import { Nullable } from '../../../../Shared/domain/Nullable';
-import { MongoRepository } from '../../../../Shared/infrastructure/persistence/mongo/MongoRepository';
-import { CatalogId } from '../../../Shared/domain/Catalogs/CatalogId';
+import { Nullable } from '../../../../shared/domain/Nullable';
+import { MongoRepository } from '../../../../shared/infrastructure/persistence/mongo/MongoRepository';
+import { CatalogId } from '../../../shared/domain/catalogs/CatalogId';
 import { Catalog } from '../../domain/Catalog';
 import { CatalogRepository } from '../../domain/CatalogRepository';
 

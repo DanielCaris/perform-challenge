@@ -1,6 +1,6 @@
-import { Command } from '../../../Shared/domain/Command';
-import { CommandHandler } from '../../../Shared/domain/CommandHandler';
-import { CatalogId } from '../../Shared/domain/Catalogs/CatalogId';
+import { Command } from '../../../shared/domain/Command';
+import { CommandHandler } from '../../../shared/domain/CommandHandler';
+import { CatalogId } from '../../shared/domain/catalogs/CatalogId';
 import { CatalogName } from '../domain/CatalogName';
 import { CatalogCreator } from './CatalogCreator';
 import { CreateCatalogCommand } from './CreateCatalogCommand';

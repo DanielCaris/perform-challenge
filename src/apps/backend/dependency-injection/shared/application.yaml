@@ -1,0 +1,40 @@
+services:
+  Shared.MongoConfig:
+    factory:
+      class: ../../../../contexts/marketplace/shared/infrastructure/persistence/mongo/MongoConfigFactory
+      method: 'createConfig'
+
+  Shared.ConnectionManager:
+    factory:
+      class: ../../../../contexts/shared/infrastructure/persistence/mongo/MongoClientFactory
+      method: 'createClient'
+    arguments: ['marketplace', '@Shared.MongoConfig']
+
+  Shared.Logger:
+    class: ../../../../contexts/shared/infrastructure/WinstonLogger
+    arguments: []
+
+  Shared.RabbitMqConfig:
+    factory:
+      class: ../../../../contexts/marketplace/shared/infrastructure/event-bus/rabbit-mq/RabbitMqConfigFactory
+      method: 'createConfig'
+
+  Shared.EventBus:
+    class: ../../../../contexts/shared/infrastructure/event-bus/rabbit-mq/RabbitMqEventBus
+    arguments: ['@Shared.RabbitMqConfig', '@Shared.Logger']
+
+  Shared.CommandHandlersInformation:
+    class: ../../../../contexts/shared/infrastructure/command-bus/CommandHandlersInformation
+    arguments: ['!tagged commandHandler']
+
+  Shared.CommandBus:
+    class: ../../../../contexts/shared/infrastructure/command-bus/InMemoryCommandBus
+    arguments: ['@Shared.CommandHandlersInformation']
+
+  Shared.QueryHandlersInformation:
+    class: ../../../../contexts/shared/infrastructure/query-bus/QueryHandlersInformation
+    arguments: ['!tagged queryHandler']
+
+  Shared.QueryBus:
+    class: ../../../../contexts/shared/infrastructure/query-bus/InMemoryQueryBus
+    arguments: ['@Shared.QueryHandlersInformation']

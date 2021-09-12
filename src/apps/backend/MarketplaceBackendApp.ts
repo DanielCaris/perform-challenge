@@ -1,9 +1,9 @@
 import { Definition } from 'node-dependency-injection';
 
-import { DomainEvent } from '../../contexts/Shared/domain/DomainEvent';
-import { DomainEventSubscriber } from '../../contexts/Shared/domain/DomainEventSubscriber';
-import { EventBus } from '../../contexts/Shared/domain/EventBus';
-import { DomainEventMapping } from '../../contexts/Shared/infrastructure/EventBus/DomainEventMapping';
+import { DomainEvent } from '../../contexts/shared/domain/DomainEvent';
+import { DomainEventSubscriber } from '../../contexts/shared/domain/DomainEventSubscriber';
+import { EventBus } from '../../contexts/shared/domain/EventBus';
+import { DomainEventMapping } from '../../contexts/shared/infrastructure/event-bus/DomainEventMapping';
 import container from './dependency-injection';
 import { Server } from './server';
 

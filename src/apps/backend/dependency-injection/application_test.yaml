@@ -3,9 +3,9 @@ imports:
 
 services:
   Marketplace.EnvironmentArranger:
-    class: ../../../../../tests/Contexts/Shared/infrastructure/mongo/MongoEnvironmentArranger
+    class: ../../../../tests/contexts/shared/infrastructure/mongo/MongoEnvironmentArranger
     arguments: ['@Shared.ConnectionManager']
 
   Shared.EventBus:
-    class: ../../../../Contexts/Shared/infrastructure/EventBus/InMemory/InMemorySyncEventBus
+    class: ../../../../contexts/shared/infrastructure/event-bus/in-memory/InMemorySyncEventBus
     arguments: []

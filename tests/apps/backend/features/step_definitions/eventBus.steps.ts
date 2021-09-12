@@ -5,8 +5,8 @@ import container from '../../../../../src/apps/backend/dependency-injection';
 import { DomainEvent } from '../../../../../src/contexts/Shared/domain/DomainEvent';
 import { DomainEventSubscriber } from '../../../../../src/contexts/Shared/domain/DomainEventSubscriber';
 import { EventBus } from '../../../../../src/contexts/Shared/domain/EventBus';
-import { DomainEventJsonDeserializer } from '../../../../../src/contexts/Shared/infrastructure/EventBus/DomainEventJsonDeserializer';
-import { DomainEventMapping } from '../../../../../src/contexts/Shared/infrastructure/EventBus/DomainEventMapping';
+import { DomainEventJsonDeserializer } from '../../../../../src/contexts/shared/infrastructure/event-bus/DomainEventJsonDeserializer';
+import { DomainEventMapping } from '../../../../../src/contexts/shared/infrastructure/event-bus/DomainEventMapping';
 
 const eventBus = container.get('Shared.EventBus') as EventBus;
 const deserializer = buildDeserializer();

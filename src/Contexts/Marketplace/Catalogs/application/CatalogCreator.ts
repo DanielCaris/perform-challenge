@@ -1,5 +1,5 @@
-import { EventBus } from '../../../Shared/domain/EventBus';
-import { CatalogId } from '../../Shared/domain/Catalogs/CatalogId';
+import { EventBus } from '../../../shared/domain/EventBus';
+import { CatalogId } from '../../shared/domain/catalogs/CatalogId';
 import { Catalog } from '../domain/Catalog';
 import { CatalogName } from '../domain/CatalogName';
 import { CatalogRepository } from '../domain/CatalogRepository';
