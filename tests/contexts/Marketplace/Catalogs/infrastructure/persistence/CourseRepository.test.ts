@@ -1,4 +1,4 @@
-import container from '../../../../../../src/apps/marketplace/backend/dependency-injection';
+import container from '../../../../../../src/apps/backend/dependency-injection';
 import { CatalogRepository } from '../../../../../../src/contexts/Marketplace/Catalogs/domain/CatalogRepository';
 import { EnvironmentArranger } from '../../../../Shared/infrastructure/arranger/EnvironmentArranger';
 import { CatalogMother } from '../../domain/CatalogMother';

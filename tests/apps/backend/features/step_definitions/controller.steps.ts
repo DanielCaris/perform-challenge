@@ -2,9 +2,9 @@ import assert from 'assert';
 import { AfterAll, BeforeAll, Given, Then } from 'cucumber';
 import request from 'supertest';
 
-import container from '../../../../../../src/apps/marketplace/backend/dependency-injection';
-import { MarketplaceBackendApp } from '../../../../../../src/apps/marketplace/backend/MarketplaceBackendApp';
-import { EnvironmentArranger } from '../../../../../Contexts/Shared/infrastructure/arranger/EnvironmentArranger';
+import container from '../../../../../src/apps/backend/dependency-injection';
+import { MarketplaceBackendApp } from '../../../../../src/apps/backend/MarketplaceBackendApp';
+import { EnvironmentArranger } from '../../../../contexts/Shared/infrastructure/Arranger/EnvironmentArranger';
 
 let _request: request.Test;
 let _response: request.Response;

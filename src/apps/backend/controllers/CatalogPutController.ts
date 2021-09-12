@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 
-import { CreateCatalogCommand } from '../../../../contexts/Marketplace/Catalogs/application/CreateCatalogCommand';
-import { CatalogAlreadyExists } from '../../../../contexts/Marketplace/Catalogs/domain/CatalogAlreadyExists';
-import { CommandBus } from '../../../../contexts/Shared/domain/CommandBus';
+import { CreateCatalogCommand } from '../../../contexts/Marketplace/Catalogs/application/CreateCatalogCommand';
+import { CatalogAlreadyExists } from '../../../contexts/Marketplace/Catalogs/domain/CatalogAlreadyExists';
+import { CommandBus } from '../../../contexts/Shared/domain/CommandBus';
 import { Controller } from './Controller';
 
 export class CatalogPutController implements Controller {

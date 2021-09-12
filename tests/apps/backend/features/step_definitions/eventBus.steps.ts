@@ -1,12 +1,12 @@
 import { Given } from 'cucumber';
 import { Definition } from 'node-dependency-injection';
 
-import container from '../../../../../../src/apps/marketplace/backend/dependency-injection';
-import { DomainEvent } from '../../../../../../src/Contexts/Shared/domain/DomainEvent';
-import { DomainEventSubscriber } from '../../../../../../src/Contexts/Shared/domain/DomainEventSubscriber';
-import { EventBus } from '../../../../../../src/Contexts/Shared/domain/EventBus';
-import { DomainEventJsonDeserializer } from '../../../../../../src/Contexts/Shared/infrastructure/EventBus/DomainEventJsonDeserializer';
-import { DomainEventMapping } from '../../../../../../src/Contexts/Shared/infrastructure/EventBus/DomainEventMapping';
+import container from '../../../../../src/apps/backend/dependency-injection';
+import { DomainEvent } from '../../../../../src/contexts/Shared/domain/DomainEvent';
+import { DomainEventSubscriber } from '../../../../../src/contexts/Shared/domain/DomainEventSubscriber';
+import { EventBus } from '../../../../../src/contexts/Shared/domain/EventBus';
+import { DomainEventJsonDeserializer } from '../../../../../src/contexts/Shared/infrastructure/EventBus/DomainEventJsonDeserializer';
+import { DomainEventMapping } from '../../../../../src/contexts/Shared/infrastructure/EventBus/DomainEventMapping';
 
 const eventBus = container.get('Shared.EventBus') as EventBus;
 const deserializer = buildDeserializer();

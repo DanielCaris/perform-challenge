@@ -7,7 +7,7 @@ import helmet from 'helmet';
 import * as http from 'http';
 import httpStatus from 'http-status';
 
-import Logger from '../../../Contexts/Shared/domain/Logger';
+import Logger from '../../contexts/Shared/domain/Logger';
 import container from './dependency-injection';
 import { registerRoutes } from './routes';
 

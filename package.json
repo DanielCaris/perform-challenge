@@ -11,7 +11,7 @@
     "npm": ">=6.7.0"
   },
   "scripts": {
-    "dev:marketplace:backend": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/apps/marketplace/backend/start.ts",
+    "dev:marketplace:backend": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  src/apps/backend/start.ts",
     "test": "npm run test:unit && npm run test:features",
     "test:unit": "NODE_ENV=test jest",
     "test:features": "npm run test:marketplace:backend:features && npm run test:backoffice:backend:features",
